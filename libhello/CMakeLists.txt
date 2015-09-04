@@ -15,8 +15,13 @@ set_target_properties(
 )
 
 install(TARGETS libhello
+    EXPORT libhello
     ARCHIVE
         DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY
         DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+install(EXPORT libhello
+    DESTINATION ${CMAKE_INSTALL_DATADIR}/${PROJECT_NAME}
 )
