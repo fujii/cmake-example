@@ -4,4 +4,5 @@ project(hello VERSION 0.1 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
+add_subdirectory(libhello)
 add_subdirectory(src)
