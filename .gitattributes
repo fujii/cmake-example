@@ -1,0 +1,3 @@
+# Check in all files as LF and check out as native line end style
+* text=auto
+*.png binary
