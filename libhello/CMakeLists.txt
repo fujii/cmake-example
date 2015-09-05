@@ -7,23 +7,23 @@ set_target_properties(
   OUTPUT_NAME hello
 )
 
+generate_export_header(libhello)
+
 target_include_directories(
   libhello
-  PRIVATE include
+  PRIVATE
+    include
+    ${CMAKE_CURRENT_BINARY_DIR}
   INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
 
 set(api_header_files
-  include/hello/export.h
   include/hello/hello.h
 )
 target_sources(libhello PRIVATE ${api_header_files})
-
-target_compile_definitions(
-  libhello PRIVATE LIBHELLO_EXPORTS
-)
 
 install(TARGETS libhello
   EXPORT libhello
@@ -40,7 +40,9 @@ install(EXPORT libhello
 )
 
 install(
-  FILES ${api_header_files}
+  FILES
+    ${api_header_files}
+    ${CMAKE_CURRENT_BINARY_DIR}/libhello_export.h
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hello
   COMPONENT headers
 )

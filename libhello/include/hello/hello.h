@@ -2,13 +2,13 @@
 #define LIBHELLO_H
 #pragma once
 
-#include <hello/export.h>
+#include "libhello_export.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-LIBHELLO_API void hello();
+LIBHELLO_EXPORT void hello();
 
 #ifdef __cplusplus
 }
