@@ -4,5 +4,7 @@ project(hello VERSION 0.1 LANGUAGES CXX)
 
 include(GNUInstallDirs)
 
+option(BUILD_SHARED_LIBS "Create shared libraries" ON)
+
 add_subdirectory(libhello)
 add_subdirectory(src)
