@@ -1,8 +1,8 @@
 
 add_executable(hello
-    hello.cxx
+  hello.cxx
 )
 
 install(TARGETS hello
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
