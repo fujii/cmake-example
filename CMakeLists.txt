@@ -14,5 +14,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 option(BUILD_SHARED_LIBS "Create shared libraries" ON)
 
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE)
+include(CPack)
+
 add_subdirectory(libhello)
 add_subdirectory(src)
