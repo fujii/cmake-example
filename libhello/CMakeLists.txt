@@ -26,7 +26,7 @@ set(api_header_files
 target_sources(libhello PRIVATE ${api_header_files})
 
 install(TARGETS libhello
-  EXPORT libhello
+  EXPORT libhello-config
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
   ARCHIVE
@@ -35,7 +35,7 @@ install(TARGETS libhello
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
-install(EXPORT libhello
+install(EXPORT libhello-config
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 
