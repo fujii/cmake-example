@@ -36,6 +36,7 @@ install(TARGETS libhello
 )
 
 install(EXPORT libhello-config
+  NAMESPACE ${PROJECT_NAME}::
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake
 )
 
