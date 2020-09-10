@@ -1,14 +1,10 @@
-add_library(libhello
+add_library(hello
   hello.cxx)
 
-set_target_properties(
-  libhello PROPERTIES
-  OUTPUT_NAME hello)
-
-generate_export_header(libhello)
+generate_export_header(hello)
 
 target_include_directories(
-  libhello
+  hello
   PRIVATE
     include
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -20,10 +16,10 @@ target_include_directories(
 set(api_header_files
   include/hello/hello.h)
 
-target_sources(libhello PRIVATE ${api_header_files})
+target_sources(hello PRIVATE ${api_header_files})
 
-install(TARGETS libhello
-  EXPORT libhello-config
+install(TARGETS hello
+  EXPORT hello-config
   RUNTIME
     DESTINATION ${CMAKE_INSTALL_BINDIR}
   ARCHIVE
@@ -31,13 +27,13 @@ install(TARGETS libhello
   LIBRARY
     DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
-install(EXPORT libhello-config
+install(EXPORT hello-config
   NAMESPACE ${PROJECT_NAME}::
   DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake)
 
 install(
   FILES
     ${api_header_files}
-    ${CMAKE_CURRENT_BINARY_DIR}/libhello_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/hello_export.h
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hello
   COMPONENT headers)

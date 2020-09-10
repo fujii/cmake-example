@@ -1,8 +1,8 @@
 
-add_executable(hello
+add_executable(hello_test
   hello.cxx)
 
-target_link_libraries(hello libhello)
+target_link_libraries(hello_test hello)
 
 install(TARGETS hello
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

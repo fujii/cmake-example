@@ -19,5 +19,5 @@ include(InstallRequiredSystemLibraries)
 set(CPACK_RESOURCE_FILE_LICENSE ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE)
 include(CPack)
 
-add_subdirectory(libhello)
+add_subdirectory(hello)
 add_subdirectory(src)
